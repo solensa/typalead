@@ -73,6 +73,11 @@ var quad2 = 0;
 var quad3 = 0;
 var quad4 = 0;
 
+var percent1 = 0;
+var percent2 = 0;
+var percent3 = 0;
+var percent4 = 0;
+
 $("input[type='radio']").change(function (e) {
   let answer = e.currentTarget.id.slice(-1);
   let boxNum = Number(e.currentTarget.name.match(/\d+/)[0]) + 1;
@@ -126,6 +131,16 @@ const submitAnswers = () => {
   $("#quad2").css("background-color", "rgba(47,45,137," + alpha2 + ")");
   $("#quad3").css("background-color", "rgba(47,45,137," + alpha3 + ")");
   $("#quad4").css("background-color", "rgba(47,45,137," + alpha4 + ")");
+
+  // calc %'s and put it in the relevant quadrant
+  percent1 = Math.round(alpha1 * 100);
+  percent2 = Math.round(alpha2 * 100);
+  percent3 = Math.round(alpha3 * 100);
+  percent4 = Math.round(alpha4 * 100);
+  document.getElementById("q1").innerHTML = percent1 + "%";
+  document.getElementById("q2").innerHTML = percent2 + "%";
+  document.getElementById("q3").innerHTML = percent3 + "%";
+  document.getElementById("q4").innerHTML = percent4 + "%";
 
   $("#resultsBox").removeClass("hide");
   $("html,body").animate(
@@ -217,10 +232,26 @@ function sendEmail(eSubject, eBody) {
 
   console.log("emailCodeword");
   var titleStr = "Your Leadership Style";
-  var bodyStr = "Your results...";
+  var bodyStr =
+    "Hi Team,%0D%0A%0D%0ACheck out my Leadership style:" +
+    "%0D%0A%0D%0ASupporting: " +
+    percent1 +
+    "%" +
+    "%0D%0ACoaching: " +
+    percent2 +
+    "%" +
+    "%0D%0ADelegating: " +
+    percent3 +
+    "%" +
+    "%0D%0ADirecting: " +
+    percent4 +
+    "%";
   // var bodyStr = "Please find a link back to your personal Atom dashboard below:  %0D%0A  %0D%0A http://atom.machine.group/results.html?" + userCodeword;
-  var bodyStr = eBody.replace(/\n/g, "%0D%0A");
+  // var bodyStr = eBody.replace(/\n/g, "%0D%0A");
   window.open(
-    "mailto:yourEmail@laingorourke.com?subject=" + titleStr + "&body=" + bodyStr
+    "mailto:nick.blasdale@icloud.com;HLindsay@laingorourke.com;rclaridge@laingorourke.com?subject=" +
+      titleStr +
+      "&body=" +
+      bodyStr
   );
 }

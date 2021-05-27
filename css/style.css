@@ -498,8 +498,18 @@ button.bounceBtn2:hover {
   justify-content: center;
   text-align: center;
 }
+.quadrant > div {
+  margin: 0;
+}
 .quadrant p {
   width: 80%;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.quadrant span {
+  font-weight: 700;
+  font-size: 23px;
   opacity: 0.8;
 }
 

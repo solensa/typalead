@@ -457,16 +457,28 @@
               <div class="yAxis"><p>Relationship Orientated Behaviour</p></div>
               <div class="quadrantWrap">
                 <div id="quad1" class="quadrant">
-                  <p>High Relationship & Lower Task</p>
+                  <div>
+                    <span id="q1"></span>
+                    <p>Supporting</p>
+                  </div>
                 </div>
                 <div id="quad2" class="quadrant">
-                  <p>High Task & High Relationship</p>
+                  <div>
+                    <span id="q2"></span>
+                    <p>Coaching</p>
+                  </div>
                 </div>
                 <div id="quad3" class="quadrant">
-                  <p>Lower Task & Lower Relationship</p>
+                  <div>
+                    <span id="q3"></span>
+                    <p>Delegating</p>
+                  </div>
                 </div>
                 <div id="quad4" class="quadrant">
-                  <p>High Task & Low Relationship</p>
+                  <div>
+                    <span id="q4"></span>
+                    <p>Directing</p>
+                  </div>
                 </div>
               </div>
               <div class="xAxis"><p>Task Orientated Behaviour</p></div>
@@ -501,7 +513,13 @@
               situation.
             </p>
 
-            <button id="send1" class="hvr-bounce-to-top bounceBtn">send</button>
+            <button
+              id="send1"
+              class="hvr-bounce-to-top bounceBtn"
+              onclick="sendEmail()"
+            >
+              send
+            </button>
           </div>
         </div>
       </div>
