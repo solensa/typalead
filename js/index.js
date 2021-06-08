@@ -249,9 +249,6 @@ function sendEmail(eSubject, eBody) {
   // var bodyStr = "Please find a link back to your personal Atom dashboard below:  %0D%0A  %0D%0A http://atom.machine.group/results.html?" + userCodeword;
   // var bodyStr = eBody.replace(/\n/g, "%0D%0A");
   window.open(
-    "mailto:nick.blasdale@icloud.com;HLindsay@laingorourke.com;rclaridge@laingorourke.com?subject=" +
-      titleStr +
-      "&body=" +
-      bodyStr
+    "mailto:SDP@laingorourke.com?subject=" + titleStr + "&body=" + bodyStr
   );
 }
